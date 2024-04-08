@@ -1,4 +1,4 @@
-<h1 align="center"> { unit-converter } </h1>
+<h1 align="center"> { Unit-Converter } </h1>
 
 Unit converter in JavaScript.
 
@@ -21,13 +21,13 @@ Unit converter in JavaScript.
 ## Installing
 
 ```bash
-npm i Zhiro990/unit-converter
+npm i Zhiro990/Unit-Converter
 ```
 
 ## Importing
 
 ```js
-const UnitConverter = require("unit-converter");
+const UnitConverter = require("Unit-Converter");
 ```
 
 ## Methods

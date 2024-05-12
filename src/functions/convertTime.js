@@ -18,7 +18,7 @@ module.exports = function convertTime(from, to, number) {
 	let functions = {
 		yr: {
 			mo: x => x * 12,
-			wk: x => x * 52.1429,
+			wk: x => x * 52.1428571,
 			d: x => x * 365,
 			h: x => x * 8760,
 			min: x => x * 525600,
@@ -27,16 +27,16 @@ module.exports = function convertTime(from, to, number) {
 		},
 		mo: {
 			yr: x => x / 12,
-			wk: x => x * 4.34524,
-			d: x => x * 30.4167,
-			h: x => x * 730.001,
-			min: x => x * 43800,
-			s: x => x * 2628002.88,
-			ms: x => x * 262802880
+			wk: x => x * 4.28571429,
+			d: x => x * 30,
+			h: x => x * 720,
+			min: x => x * 43200,
+			s: x => x * 2592000,
+			ms: x => x * 2592000000
 		},
 		wk: {
-			yr: x => x / 52.1429,
-			mo: x => x / 4.34524,
+			yr: x => x / 52.1428571,
+			mo: x => x / 4.28571429,
 			d: x => x * 7,
 			h: x => x * 168,
 			m: x => x * 10080,
@@ -45,7 +45,7 @@ module.exports = function convertTime(from, to, number) {
 		},
 		d: {
 			yr: x => x / 365,
-			mo: x => x / 30.4167,
+			mo: x => x / 30,
 			wk: x => x / 7,
 			h: x => x * 24,
 			min: x => x * 1440,
@@ -54,7 +54,7 @@ module.exports = function convertTime(from, to, number) {
 		},
 		h: {
 			yr: x => x / 8760,
-			mo: x => x / 730.001,
+			mo: x => x / 720,
 			wk: x => x / 168,
 			d: x => x / 24,
 			min: x => x * 60,
@@ -63,7 +63,7 @@ module.exports = function convertTime(from, to, number) {
 		},
 		min: {
 			yr: x => x / 525600,
-			mo: x => x / 43800,
+			mo: x => x / 43200,
 			wk: x => x / 10080,
 			d: x => x / 1440,
 			h: x => x / 60,
@@ -72,7 +72,7 @@ module.exports = function convertTime(from, to, number) {
 		},
 		s: {
 			yr: x => x / 31536000,
-			mo: x => x / 2628002.88,
+			mo: x => x / 2592000,
 			wk: x => x / 604800,
 			d: x => x / 86400,
 			h: x => x / 3600,
@@ -81,7 +81,7 @@ module.exports = function convertTime(from, to, number) {
 		},
 		ms: {
 			yr: x => x / 31536000000,
-			mo: x => x / 2628002880,
+			mo: x => x / 2592000000,
 			wk: x => x / 604800000,
 			d: x => x / 86400000,
 			h: x => x / 3600000,

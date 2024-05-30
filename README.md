@@ -176,5 +176,3 @@ const UnitConverter = require("Unit-Converter");
 | `min` | Minute |
 | `s` | Second |
 | `ms` | Millisecond |
-
-<h5 align="center"> Created with ❤ by Zhiro990 </h5>

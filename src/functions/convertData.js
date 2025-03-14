@@ -1,5 +1,5 @@
 module.exports = function convertData(from, to, number) {
-	let availableUnits = [
+	const availableUnits = [
 		"QB",
 		"RB",
 		"YB",
@@ -58,7 +58,7 @@ module.exports = function convertData(from, to, number) {
 
 	if (from == to) return number;
 
-	let tier = {
+	const tier = {
 		Q: 11,
 		R: 10,
 		Y: 9,
@@ -74,7 +74,7 @@ module.exports = function convertData(from, to, number) {
 		b: 1
 	};
 
-	let functions = {
+	const functions = {
 		updown: (x, y, z, _) => {
 			if (_ == 1) {
 				return z * 1000 ** (tier[x[0]] - tier[y[0]]);
@@ -110,6 +110,7 @@ module.exports = function convertData(from, to, number) {
 			} else {
 				result = functions.updown(current, "B", result, 1);
 			}
+			
 			current = "B";
 		} else {
 			if (current.includes("i")) {
@@ -117,6 +118,7 @@ module.exports = function convertData(from, to, number) {
 			} else {
 				result = functions.updown(current, "b", result, 1);
 			}
+			
 			current = "b";
 		}
 	}

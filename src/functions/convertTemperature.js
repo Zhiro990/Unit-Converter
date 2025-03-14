@@ -1,5 +1,5 @@
 module.exports = function convertTemperature(from, to, number) {
-	let availableUnits = ["C", "F", "K", "R", "Re"];
+	const availableUnits = ["C", "F", "K", "R", "Re"];
 
 	if (
 		!from ||
@@ -15,7 +15,7 @@ module.exports = function convertTemperature(from, to, number) {
 
 	if (from == to) return number;
 
-	let functions = {
+	const functions = {
 		C: {
 			F: x => x * (9 / 5) + 32,
 			K: x => x + 273.15,

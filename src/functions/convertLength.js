@@ -1,5 +1,5 @@
 module.exports = function convertLength(from, to, number) {
-	let availableUnits = [
+	const availableUnits = [
 		"km",
 		"hm",
 		"dam",
@@ -27,7 +27,7 @@ module.exports = function convertLength(from, to, number) {
 
 	if (from == to) return number;
 
-	let functions = {
+	const functions = {
 		metrics: (x, y, z) =>
 			z * 10 ** -(availableUnits.indexOf(x) - availableUnits.indexOf(y)),
 		m: {
@@ -77,6 +77,7 @@ module.exports = function convertLength(from, to, number) {
 		if (current != "m") {
 			result = functions[current]["m"](result);
 		}
+		
 		result = functions.metrics("m", to, result);
 	} else {
 		result = functions[current][to](result);

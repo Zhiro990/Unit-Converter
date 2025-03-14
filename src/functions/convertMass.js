@@ -1,5 +1,5 @@
 module.exports = function convertMass(from, to, number) {
-	let availableUnits = [
+	const availableUnits = [
 		"Gt",
 		"Mt",
 		"kt",
@@ -28,7 +28,7 @@ module.exports = function convertMass(from, to, number) {
 
 	if (from == to) return number;
 
-	let functions = {
+	const functions = {
 		tg: (x, y, z) =>
 			z * 1000 ** -(availableUnits.indexOf(x) - availableUnits.indexOf(y)),
 		g: {
@@ -75,7 +75,7 @@ module.exports = function convertMass(from, to, number) {
 		}
 	};
 
-	let tg = availableUnits.slice(0, 7);
+	const tg = availableUnits.slice(0, 7);
 
 	if (tg.includes(from) && tg.includes(to))
 		return functions.tg(from, to, number);
@@ -91,6 +91,7 @@ module.exports = function convertMass(from, to, number) {
 		if (current != "g") {
 			result = functions[current]["g"](result);
 		}
+		
 		result = functions.tg("g", to, result);
 	} else {
 		result = functions[current][to](result);

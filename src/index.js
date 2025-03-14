@@ -5,6 +5,7 @@ class UnitConverter {
 		this.convertMass = require("./functions/convertMass.js");
 		this.convertTemperature = require("./functions/convertTemperature.js");
 		this.convertTime = require("./functions/convertTime.js");
+		
 		return this;
 	}
 }

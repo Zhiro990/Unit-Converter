@@ -1,5 +1,5 @@
 module.exports = function convertTime(from, to, number) {
-	let availableUnits = ["yr", "mo", "wk", "d", "h", "min", "s", "ms"];
+	const availableUnits = ["yr", "mo", "wk", "d", "h", "min", "s", "ms"];
 
 	if (
 		!from ||
@@ -15,7 +15,7 @@ module.exports = function convertTime(from, to, number) {
 
 	if (from == to) return number;
 
-	let functions = {
+	const functions = {
 		yr: {
 			mo: x => x * 12,
 			wk: x => x * 52.1428571,
